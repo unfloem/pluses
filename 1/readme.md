@@ -108,6 +108,8 @@ cout << "Минимальное: " << min;
 
 #### 6. Прочитать множество чисел и найти наибольшее количество идущих рядом монотонно возрастающих чисел.
 ```
+setlocale(LC_ALL, "Russian");
+
 int numbersCount;
 cout << "Количество чисел: ";
 cin >> numbersCount;
@@ -132,13 +134,14 @@ while (numbersCount > 0)
 
     counter = current > prevoius
         ? counter + 1
-        : 0;
+        : 1;
 
     if (counter > mainCounter)
     {
         mainCounter = counter;
     }
 
+    previous = current;
     numbersCount--;
 }
 
